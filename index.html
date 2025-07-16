@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar System Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: auto;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+        }
+
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-height: 95vh;
+            overflow-y: auto;
+            z-index: 10;
+            min-width: 240px;
+        }
+
+        #controls div {
+            margin: 50px 0;
+        }
+
+        #controls label {
+            margin-right: 5px;
+            display: inline-block;
+            min-width: 80px;
+        }
+
+        #controls input[type="range"] {
+            width: 150px;
+            height: 4px;
+        }
+
+        #pauseResume,
+        #themeToggle {
+            padding: 8px 12px;
+            margin: 10px 0;
+            font-size: 14px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+        }
+
+        #tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 4px;
+            display: none;
+            z-index: 20;
+            font-size: 14px;
+        }
+
+        #globalSpeedValue {
+            font-weight: bold;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="controls">
+        <button id="pauseResume">Pause</button>
+        <button id="themeToggle">Toggle Dark/Light</button>
+
+        <div>
+            <label for="globalSpeed">Global Speed:</label>
+            <input type="range" id="globalSpeed" min="0" max="2" step="0.01" value="1" />
+            <span id="globalSpeedValue">1.00</span>
+        </div>
+
+        <div><label for="speed0">Mercury:</label><input type="range" id="speed0" min="0" max="0.2" step="0.01"
+                value="0.1"></div>
+        <div><label for="speed1">Venus:</label><input type="range" id="speed1" min="0" max="0.2" step="0.01"
+                value="0.08"></div>
+        <div><label for="speed2">Earth:</label><input type="range" id="speed2" min="0" max="0.2" step="0.01"
+                value="0.06"></div>
+        <div><label for="speed3">Mars:</label><input type="range" id="speed3" min="0" max="0.2" step="0.01"
+                value="0.05"></div>
+        <div><label for="speed4">Jupiter:</label><input type="range" id="speed4" min="0" max="0.2" step="0.01"
+                value="0.04"></div>
+        <div><label for="speed5">Saturn:</label><input type="range" id="speed5" min="0" max="0.2" step="0.01"
+                value="0.03"></div>
+        <div><label for="speed6">Uranus:</label><input type="range" id="speed6" min="0" max="0.2" step="0.01"
+                value="0.02"></div>
+        <div><label for="speed7">Neptune:</label><input type="range" id="speed7" min="0" max="0.2" step="0.01"
+                value="0.01"></div>
+    </div>
+
+    <div id="tooltip"></div>
+
+    <!-- JS: script.js (contains your full solar system code) -->
+    <script type="module" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+</body>
+
+</html>
