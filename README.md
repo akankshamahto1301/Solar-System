@@ -1,6 +1,6 @@
 # Solar System Simulation 🌍🌞
 
-A 3D solar system built with Three.js and vanilla JavaScript.
+A 3D solar system built with Three.js and JavaScript.
 
 ## Features
 
